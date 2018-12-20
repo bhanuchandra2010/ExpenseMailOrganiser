@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\ExpenseCalculator.cs" />
+    <Compile Include="Model\CustomException.cs" />
     <Compile Include="Model\MailEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

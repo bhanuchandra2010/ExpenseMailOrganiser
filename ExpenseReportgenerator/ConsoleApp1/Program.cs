@@ -55,14 +55,14 @@ namespace ConsoleApp1
             var inboxlistRequest = service.Users.Messages.List("me");
             inboxlistRequest.LabelIds = "INBOX";
             inboxlistRequest.IncludeSpamTrash = false;
-            inboxlistRequest.Q = "after:2018/12/18";
+            inboxlistRequest.Q = "after:"+DateTime.Now.Year+"/" + DateTime.Now.Month + "/01" ;
             //get our emails
             var emailListResponse = inboxlistRequest.Execute();
 
             if (emailListResponse != null && emailListResponse.Messages != null)
             {
                 //loop through each email and get what fields you want...
-                IEnumerable<MailEntity> lstentity = calculator.GetTransactionDetails(emailListResponse, service);
+                IEnumerable<MailEntity> lstentity = calculator.GetMailDetails(emailListResponse, service);
 
             }
             Console.ReadLine();
