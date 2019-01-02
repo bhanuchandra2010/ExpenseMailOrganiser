@@ -21,7 +21,15 @@ namespace ConsoleApp1
         // at ~/.credentials/gmail-dotnet-quickstart.json
         static string[] Scopes = { GmailService.Scope.GmailReadonly };
         static string ApplicationName = "Gmail API .NET Quickstart";
+        static private async Task callWebApi()
+        {
+            WebResponse response = await WebRequest
+                .Create("http://www.google.com")
+                .GetResponseAsync()
+                .ConfigureAwait(false);
+            Console.WriteLine(response.ToString());
 
+        }
         static void Main(string[] args)
         {
 
